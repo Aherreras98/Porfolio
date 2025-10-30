@@ -2,7 +2,7 @@
     --color-bg: hsl(30, 4%, 20%);
     --color-primary: hsl(34, 87%, 53%);
     --color-secondary: hsl(189, 65%, 28%);
-    --color-accent: hsl(18, 86%, 54%); 
+    --color-accent: hsl(18, 86%, 54%);
     --color-accent-hover: hsl(18, 86%, 45%);
     --color-surface: hsl(166, 8%, 60%);
 
@@ -14,11 +14,11 @@
     --font-sans: "Roboto", Helvetica;
 
     --text-2xl: 24px;
-    --text-lg: 20px; 
+    --text-lg: 20px;
     --text-base: 16px;
     --text-sm: 12px;
 
-    --spacing-2: 8px;  
+    --spacing-2: 8px;
     --spacing-4: 16px;
     --spacing-8: 32px;
     --spacing-15: 60px;
@@ -110,9 +110,11 @@ main,
 .header__toggle.is-active .hamburger-line:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
+
 .header__toggle.is-active .hamburger-line:nth-child(2) {
     opacity: 0;
 }
+
 .header__toggle.is-active .hamburger-line:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
@@ -138,10 +140,9 @@ main,
     font-style: italic;
     font-size: var(--text-2xl);
     display: flex;
-    flex-direction: column; 
-    align-items: center;    
+    flex-direction: column;
+    align-items: center;
 }
-
 
 .button {
     display: inline-block;
@@ -183,6 +184,10 @@ main,
 
 .project-card__content {
     padding: var(--spacing-4);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .project-card__title {
@@ -198,12 +203,34 @@ main,
     font-size: var(--text-sm);
     color: var(--color-text-dark);
     margin: var(--spacing-2) 0 var(--spacing-4);
+    flex-basis: 100%;
+}
+
+.project-card__tech-logos {
+    display: flex;
+    gap: var(--spacing-2);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tech-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    opacity: 0.8;
+}
+
+.tech-logo:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
 }
 
 .project-card__buttons {
     display: flex;
     justify-content: space-around;
     gap: var(--spacing-4);
+    flex-basis: 100%;
 }
 
 .footer {
@@ -214,7 +241,7 @@ main,
 }
 
 @media (max-width: 768px) {
-    
+
     .header,
     main,
     .footer {
@@ -226,7 +253,7 @@ main,
     .header {
         flex-direction: row;
         justify-content: space-between;
-        position: relative; /* Para anclar el menú */
+        position: relative;
     }
 
     .header__toggle {
@@ -256,14 +283,15 @@ main,
     .hero {
         padding: var(--spacing-4);
     }
+
     .hero__text {
         font-size: var(--text-lg);
     }
+
     .projects-grid {
         grid-template-columns: 1fr;
     }
 }
-
 
 .nav__link,
 .button,
